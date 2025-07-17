@@ -17,6 +17,8 @@ $router->get('/about', function () {
     echo "About Page";
 });
 $router->get('/products', HomeController::class . "@index");
+$router->get('/products/{id}/show', HomeController::class . "@show");
+$router->get('/products/create', HomeController::class . "@create");
 
 // Run it!
 $router->run();
