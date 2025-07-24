@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'bqngo/mvc',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '6d81bb36eaabbd3b9cbd9dad9efbd9a38187a142',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'bqngo/mvc' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '6d81bb36eaabbd3b9cbd9dad9efbd9a38187a142',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -25,6 +25,15 @@
             'reference' => '55657b76da8a0a509250fb55b9dd24e1aa237eba',
             'type' => 'library',
             'install_path' => __DIR__ . '/../bramus/router',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'eftec/bladeone' => array(
+            'pretty_version' => '4.18',
+            'version' => '4.18.0.0',
+            'reference' => 'fb51dcd21ba6c998b96d26ac5babfca1bd05acdf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../eftec/bladeone',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

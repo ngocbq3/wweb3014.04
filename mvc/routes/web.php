@@ -19,6 +19,10 @@ $router->get('/about', function () {
 $router->get('/products', HomeController::class . "@index");
 $router->get('/products/{id}/show', HomeController::class . "@show");
 $router->get('/products/create', HomeController::class . "@create");
+$router->get('/products/{id}/delete', HomeController::class . "@destroy");
+$router->get('/products/{id}/update', HomeController::class . "@update");
+$router->get('/products/join', HomeController::class . "@join");
+
 
 // Run it!
 $router->run();
