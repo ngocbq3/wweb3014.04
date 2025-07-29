@@ -1,0 +1,11 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title', 'Trang chủ của admin'); ?>
+
+<?php $this->startSection('content'); ?>
+ <div class="container">
+ <h1>Trang DASHBOARD</h1>
+ </div>
+<?php $this->stopSection(); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.admin'); } ?>

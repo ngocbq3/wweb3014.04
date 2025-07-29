@@ -2,6 +2,8 @@
 
 // Require composer autoloader
 
+use App\Controllers\Admin\DashboardController;
+use App\Controllers\Admin\ProductController;
 use App\Controllers\HomeController;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -21,6 +23,14 @@ $router->get('/products/{id}/delete', HomeController::class . "@destroy");
 $router->get('/products/{id}/update', HomeController::class . "@update");
 $router->get('/products/join', HomeController::class . "@join");
 
+//Router cho Admin
+$router->get('/admin', DashboardController::class . '@index');
+
+$router->mount('/admin', function ()  use ($router) {
+    $router->mount('/products', function () use ($router) {
+        $router->get('/', ProductController::class . "@index");
+    });
+});
 
 // Run it!
 $router->run();
