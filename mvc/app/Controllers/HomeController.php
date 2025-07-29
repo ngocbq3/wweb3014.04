@@ -9,13 +9,13 @@ class HomeController
     public function index()
     {
         $products = Product::all();
-        dd($products);
+        return view('index', compact('products'));
     }
 
     public function show($id)
     {
         $product = Product::find($id);
-        dd($product);
+        return view('detail', compact('product'));
     }
 
     public function create()

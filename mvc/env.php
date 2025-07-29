@@ -4,6 +4,9 @@ const APP_NAME = "PHP2";
 
 const APP_URL = "http://localhost/web3014.04/mvc/";
 
+//Đường dẫn thư mục
+const APP_DIR = __DIR__;
+
 //connect database
 const HOST = "localhost";
 const DBNAME = "php3_wd19306";

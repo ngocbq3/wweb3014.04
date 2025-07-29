@@ -9,10 +9,8 @@ require __DIR__ . '/../vendor/autoload.php';
 // Create Router instance
 $router = new \Bramus\Router\Router();
 
-// Define routes
-$router->get('/', function () {
-    echo "Welcome PHP2";
-});
+// Trang chủ
+$router->get('/', HomeController::class . "@index");
 $router->get('/about', function () {
     echo "About Page";
 });
