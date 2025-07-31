@@ -14,7 +14,7 @@
                     <th scope="col">Category Name</th>
                     <th scope="col">Created at</th>
                     <th scope="col">
-                        <a href="" class="btn btn-primary">Create</a>
+                        <a href="{{ APP_URL . 'admin/products/create' }}" class="btn btn-primary">Create</a>
                     </th>
                 </tr>
             </thead>

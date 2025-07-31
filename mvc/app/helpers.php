@@ -26,3 +26,10 @@ function view($fileName, $data = [])
 
     echo $blade->run($fileName, $data); // it calls /views/$fileName.blade.php
 }
+
+//Hàm điều hướng website
+function redirect($path)
+{
+    header("location: " . APP_URL . $path);
+    die;
+}

@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{ APP_URL . 'admin/products/store' }}" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="" class="form-label">Name</label>
                 <input type="text" name="name" id="" class="form-control">

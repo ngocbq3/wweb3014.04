@@ -29,6 +29,8 @@ $router->get('/admin', DashboardController::class . '@index');
 $router->mount('/admin', function ()  use ($router) {
     $router->mount('/products', function () use ($router) {
         $router->get('/', ProductController::class . "@index");
+        $router->get('/create', ProductController::class . "@create");
+        $router->post('/store', ProductController::class . "@store");
     });
 });
 
