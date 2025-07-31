@@ -1,6 +1,6 @@
 <?php $_shouldextend[1]=1; ?>
 
-<?php $this->startSection('title', 'Trang chủ của admin'); ?>
+<?php $this->startSection('title', 'Danh sách sản phẩm'); ?>
 
 <?php $this->startSection('content'); ?>
  <div class="container">

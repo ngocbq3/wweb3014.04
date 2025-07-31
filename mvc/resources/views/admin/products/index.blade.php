@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Trang chủ của admin')
+@section('title', 'Danh sách sản phẩm')
 
 @section('content')
     <div class="container">
