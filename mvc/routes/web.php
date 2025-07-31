@@ -31,6 +31,7 @@ $router->mount('/admin', function ()  use ($router) {
         $router->get('/', ProductController::class . "@index");
         $router->get('/create', ProductController::class . "@create");
         $router->post('/store', ProductController::class . "@store");
+        $router->post('/{id}/delete', ProductController::class . "@delete");
     });
 });
 

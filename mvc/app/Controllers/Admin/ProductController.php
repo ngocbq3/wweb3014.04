@@ -42,4 +42,10 @@ class ProductController
 
         return redirect('admin/products');
     }
+
+    public function delete($id)
+    {
+        Product::delete($id);
+        return redirect('admin/products');
+    }
 }

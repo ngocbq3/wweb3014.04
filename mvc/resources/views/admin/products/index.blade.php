@@ -15,6 +15,7 @@
                     <th scope="col">Created at</th>
                     <th scope="col">
                         <a href="{{ APP_URL . 'admin/products/create' }}" class="btn btn-primary">Create</a>
+
                     </th>
                 </tr>
             </thead>
@@ -30,7 +31,10 @@
                         <td>{{ $pro->cate_name }}</td>
                         <td>{{ $pro->created_at }}</td>
                         <td>
-                            Edit | Delete
+                            Edit |
+                            <form action="{{ APP_URL . 'admin/products/' . $pro->id . '/delete' }}" method="post">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
