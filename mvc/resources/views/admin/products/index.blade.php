@@ -31,8 +31,10 @@
                         <td>{{ $pro->cate_name }}</td>
                         <td>{{ $pro->created_at }}</td>
                         <td>
-                            Edit |
-                            <form action="{{ APP_URL . 'admin/products/' . $pro->id . '/delete' }}" method="post">
+                            <a href="{{ APP_URL . 'admin/products/' . $pro->id . '/edit' }}"
+                                class="btn btn-primary">Edit</a>
+                            <form class="d-inline" action="{{ APP_URL . 'admin/products/' . $pro->id . '/delete' }}"
+                                method="post">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>

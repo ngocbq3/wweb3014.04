@@ -32,6 +32,11 @@ $router->mount('/admin', function ()  use ($router) {
         $router->get('/create', ProductController::class . "@create");
         $router->post('/store', ProductController::class . "@store");
         $router->post('/{id}/delete', ProductController::class . "@delete");
+
+        //form edit
+        $router->get('/{id}/edit', ProductController::class . "@edit");
+        //lưu cập nhật
+        $router->post('/{id}/update', ProductController::class . "@update");
     });
 });
 
