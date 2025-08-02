@@ -8,6 +8,9 @@
             <div class="mb-3">
                 <label for="" class="form-label">Name</label>
                 <input type="text" name="name" id="" class="form-control">
+                @isset($errors['name'])
+                    <span class="text-danger">{{ $errors['name'] }}</span>
+                @endisset
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Category Name</label>
@@ -22,6 +25,9 @@
             <div class="mb-3">
                 <label for="" class="form-label">Image</label>
                 <input type="file" name="image" id="" class="form-control">
+                @isset($errors['image'])
+                    <span class="text-danger">{{ $errors['image'] }}</span>
+                @endisset
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Price</label>

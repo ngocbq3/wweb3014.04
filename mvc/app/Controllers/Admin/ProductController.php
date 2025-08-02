@@ -27,6 +27,30 @@ class ProductController
 
         //Xử lý file
         $file = $_FILES['image'];
+        
+
+        // Validate dữ liệu (nếu cần)
+        $errors = []; //mảng chưa lỗi khi validate
+        if (trim($data['name']) == "") {
+            $errors['name'] = "Bạn cần nhập tên sản phẩm";
+        }
+        //Validate hình ảnh
+        if ($file['size'] > 0) {
+            //Mảng chưa các định dạng được phép
+            $imgs = ['jpg', 'png', 'jpeg', 'gif'];
+            //Lấy định dạng của file
+            $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+            //Nếu định dạng ko nằm trong mảng imgs thì báo lỗi
+            if (!in_array($ext, $imgs)) {
+                $errors['image'] = "File không đúng định dạng image";
+            }
+        }
+
+        if ($errors) {
+            $categories = Category::all();
+            return view('admin.products.create', compact('categories', 'errors'));
+        }
+        //Upload ảnh khi không có lỗi validate
         if ($file['size'] > 0) {
             $image = "storage/images/" . $file['name'];
             //upload file
@@ -34,9 +58,6 @@ class ProductController
             //Gán image vào data
             $data['image'] = $image;
         }
-
-        // Validate dữ liệu (nếu cần)
-
         // Lưu sản phẩm vào cơ sở dữ liệu
         Product::create($data);
 

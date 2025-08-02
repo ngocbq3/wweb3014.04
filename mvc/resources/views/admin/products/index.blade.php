@@ -35,7 +35,8 @@
                                 class="btn btn-primary">Edit</a>
                             <form class="d-inline" action="{{ APP_URL . 'admin/products/' . $pro->id . '/delete' }}"
                                 method="post">
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" onclick="return confirm('Bạn có muốn xóa không?')"
+                                    class="btn btn-danger">Delete</button>
                             </form>
                         </td>
                     </tr>
