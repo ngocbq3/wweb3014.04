@@ -4,6 +4,7 @@
 
 use App\Controllers\Admin\DashboardController;
 use App\Controllers\Admin\ProductController;
+use App\Controllers\AuthController;
 use App\Controllers\HomeController;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -39,6 +40,18 @@ $router->mount('/admin', function ()  use ($router) {
         $router->post('/{id}/update', ProductController::class . "@update");
     });
 });
+
+$router->before('GET|POST', '/admin/.*', function () {
+    if (!isset($_SESSION['user'])) {
+        redirect('login');
+        exit();
+    }
+});
+//Login, Register
+$router->get('/login', AuthController::class . "@login");
+$router->post('/login', AuthController::class . "@postLogin");
+$router->get('/register', AuthController::class . "@register");
+$router->post('/register/store', AuthController::class . "@postRegister");
 
 // Run it!
 $router->run();
